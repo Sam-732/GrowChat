@@ -1,0 +1,9 @@
+.env
+chroma/
+__pycache__/
+.venv/
+data/raw/
+*.pyc
+.pytest_cache/
+.idea/
+.DS_Store
