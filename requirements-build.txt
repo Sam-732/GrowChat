@@ -1,0 +1,7 @@
+# Build-time-only extras, for rebuilding the Chroma index on an operator machine:
+#     pip install -r requirements.txt -r requirements-build.txt
+#     python scripts/build_index.py
+# Never installed in the deploy image: sentence-transformers pulls in torch, which
+# OOMs the 512MB tier. The deployed app embeds queries with chromadb's ONNX MiniLM.
+-r requirements.txt
+sentence-transformers==4.1.0

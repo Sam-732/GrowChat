@@ -1,7 +1,10 @@
+# Runtime deps for the deployed app. sentence-transformers/torch are deliberately
+# absent: they are only needed to rebuild the index (see src/embed.py), and torch
+# does not fit in the 512MB deploy tier. Query-time embedding runs on the ONNX
+# MiniLM bundled with chromadb, whose onnxruntime + tokenizers deps come with it.
 httpx==0.28.1
 beautifulsoup4==4.13.4
 lxml==5.4.0
-sentence-transformers==4.1.0
 chromadb==1.0.15
 streamlit==1.45.1
 python-dotenv==1.1.0
